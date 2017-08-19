@@ -4,19 +4,33 @@ import {
     StyleSheet,
     View,
     Text
-} from 'react-native'
-import { Actions } from 'react-native-router-flux';
+} from 'react-native';
 
-class CustomerSales extends Component {
+class TopCustomer extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            selectedTab: 'customersales'
+            orders: []
         }
     }
 
+    componentWillMount() {
+        fetch('https://shopicruit.myshopify.com/admin/orders.json?page=1&access_token=c32313df0d0ef512ca64d5b336a0d7c6')
+        .then((response) => {
+            return response;
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((result) => {
+            this.setState({ orders: result });
+        })
+    }
+
     render() {
+        console.log(this.state.orders);
+
         return (
             <ImageBackground
                 style={styles.backgroundStyle}
@@ -25,7 +39,7 @@ class CustomerSales extends Component {
 
             <View>
                 <Text style={styles.titleStyle}>
-                    CUSTOMER SALES
+                    TOP CUSTOMER
                 </Text>
             </View>
 
@@ -50,4 +64,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default CustomerSales;
+export default TopCustomer;

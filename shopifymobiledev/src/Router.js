@@ -5,7 +5,7 @@ import {
     Actions 
 } from 'react-native-router-flux';
 import WelcomeScreen from './components/WelcomeScreen.js';
-import CustomerSales from './components/CustomerSales.js';
+import TabView from './components/TabView.js';
 
 const RouterComponent = () => {
     return (
@@ -17,9 +17,9 @@ const RouterComponent = () => {
                     hideNavBar={true}
                 />
                 <Scene
-                    key="customersales"
-                    component={CustomerSales}
-                    hideNavBar={true}
+                    key="tabview"
+                    component={TabView}
+                    navTransparent={1}
                 />
             </Scene>
         </Router>

@@ -34,7 +34,7 @@ class WelcomeScreen extends Component {
 
                 <GetStartedButton
                     onPress={() => {
-                        Actions.customersales();
+                        Actions.tabview();
                     }}
                 />
 
