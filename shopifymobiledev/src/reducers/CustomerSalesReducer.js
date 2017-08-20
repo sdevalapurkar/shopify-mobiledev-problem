@@ -7,7 +7,6 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
     if(action.type === 'search_for_customer') {
-        console.log(action.payload);
         return { ...state, custOrders: action.payload };
     }
     else if(action.type === 'set_first_name') {

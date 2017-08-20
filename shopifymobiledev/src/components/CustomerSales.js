@@ -17,6 +17,7 @@ import SubmitButton from '../common/SubmitButton.js';
 import FirstNameForm from '../common/FirstNameForm.js';
 import LastNameForm from '../common/LastNameForm.js';
 import EmailForm from '../common/EmailForm.js';
+import RenderIf from '../common/RenderIf.js';
 
 class CustomerSales extends Component {
     constructor(props) {
@@ -24,6 +25,7 @@ class CustomerSales extends Component {
 
         this.state = {
             selectedTab: 'customersales',
+            userExists: true,
             orders: []
         }
     }
@@ -50,7 +52,7 @@ class CustomerSales extends Component {
 
             <View>
                 <Text style={styles.titleStyle}>
-                    CUSTOMER SALES
+                    Find a Customer
                 </Text>
 
                 <Text style={styles.instructions}>
@@ -95,10 +97,21 @@ class CustomerSales extends Component {
                                 }
                             }
 
-                            this.props.searchForCustomer(custOrders);
+                            if(custOrders.length !== 0) {
+                                this.props.searchForCustomer(custOrders);
+                            }
+                            else {
+                                this.setState({ userExists: false });
+                            }
                         }}
                     />
                 </View>
+
+                {RenderIf(!this.state.userExists, 
+                    <Text style={styles.error}>
+                        Sorry that customer does not exist :(
+                    </Text>
+                )}
             </View>
 
             </ImageBackground>
@@ -129,6 +142,13 @@ const styles = StyleSheet.create({
     },
     buttonViewStyle: {
         paddingTop: 60
+    },
+    error: {
+        paddingTop: 20,
+        fontSize: 16,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        color: '#e60000'
     }
 });
 

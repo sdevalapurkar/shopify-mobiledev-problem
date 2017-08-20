@@ -34,7 +34,7 @@ class TabView extends Component {
                 </Icon.TabBarItemIOS>
 
                 <Icon.TabBarItemIOS
-                    title="Top Customer"
+                    title="Favourite Customer"
                     iconName="ios-heart"
                     tintColor="#cc0000"
                     selected={this.state.selectedTab == 'favoritecustomer'}

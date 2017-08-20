@@ -39,7 +39,7 @@ class TopCustomer extends Component {
 
             <View>
                 <Text style={styles.titleStyle}>
-                    TOP CUSTOMER
+                    Favourite Customer
                 </Text>
 
                 <Text style={styles.nameStyle}>
