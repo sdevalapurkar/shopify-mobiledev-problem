@@ -6,18 +6,18 @@ import {
     StyleSheet
 } from 'react-native';
 
-class FirstNameForm extends Component {
+class ItemNameForm extends Component {
     render() {
         return (
             <View>
                 <Text style={styles.nameStyle}>
-                    First Name 
+                    Item Name 
                 </Text>
                 
                 <View style={styles.cardStyle}>
                     <TextInput
                         style={{marginLeft: 5, marginRight: 5}}
-                        placeholder="John"
+                        placeholder="Aerodynamic Wooden Table"
                         placeholderTextColor="#003311"
                         underlineColorAndroid='rgba(0,0,0,0)'
                         onChangeText={this.props.onChangeText}
@@ -53,4 +53,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default FirstNameForm;
+export default ItemNameForm;

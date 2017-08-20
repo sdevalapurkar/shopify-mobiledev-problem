@@ -7,6 +7,7 @@ import {
 import WelcomeScreen from './components/WelcomeScreen.js';
 import TabView from './components/TabView.js';
 import CustomerOrderDetails from './components/CustomerOrderDetails.js';
+import ItemDetails from './components/ItemDetails.js';
 
 const RouterComponent = () => {
     return (
@@ -25,6 +26,11 @@ const RouterComponent = () => {
                 <Scene
                     key="custorderdetails"
                     component={CustomerOrderDetails}
+                    navTransparent={1}
+                />
+                <Scene
+                    key="correctitemdetails"
+                    component={ItemDetails}
                     navTransparent={1}
                 />
             </Scene>

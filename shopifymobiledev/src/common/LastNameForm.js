@@ -31,10 +31,11 @@ class LastNameForm extends Component {
 
 const styles = StyleSheet.create({
     nameStyle: {
-        fontSize: 18,
+        fontSize: 20,
         fontWeight: 'bold',
         paddingTop: 15,
-        paddingLeft: 10
+        paddingLeft: 10,
+        color: '#003311'
     },
     cardStyle: {
         borderWidth: 3,

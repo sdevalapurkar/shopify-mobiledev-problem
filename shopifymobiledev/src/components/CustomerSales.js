@@ -24,7 +24,6 @@ class CustomerSales extends Component {
         super(props);
 
         this.state = {
-            selectedTab: 'customersales',
             userExists: true,
             orders: []
         }
@@ -72,6 +71,10 @@ class CustomerSales extends Component {
                     }}
                     value={this.props.lastName}
                 />
+
+                <Text style={styles.orStyle}>
+                    OR
+                </Text>
 
                 <EmailForm
                     onChangeText={(email) => {
@@ -138,10 +141,18 @@ const styles = StyleSheet.create({
         paddingTop: 30,
         paddingBottom: 15,
         fontWeight: 'bold',
-        textAlign: 'center'
+        textAlign: 'center',
+        color: '#003311'
+    },
+    orStyle: {
+        fontSize: 26,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        paddingTop: 20,
+        color: '#003311'
     },
     buttonViewStyle: {
-        paddingTop: 60
+        paddingTop: 40
     },
     error: {
         paddingTop: 20,

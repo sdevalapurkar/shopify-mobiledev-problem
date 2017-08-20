@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import CustomerSales from './CustomerSales.js';
-import TopCustomer from './TopCustomer.js';
+import ItemSales from './ItemSales.js';
 
 class TabView extends Component {
     constructor(props) {
@@ -34,15 +34,15 @@ class TabView extends Component {
                 </Icon.TabBarItemIOS>
 
                 <Icon.TabBarItemIOS
-                    title="Favourite Customer"
-                    iconName="ios-heart"
+                    title="Item Sales"
+                    iconName="ios-cart"
                     tintColor="#cc0000"
-                    selected={this.state.selectedTab == 'favoritecustomer'}
+                    selected={this.state.selectedTab == 'itemsales'}
                     onPress={() => {
-                        this.setState({ selectedTab: 'favoritecustomer' });
+                        this.setState({ selectedTab: 'itemsales' });
                     }}
                 >
-                    <TopCustomer />
+                    <ItemSales />
                 </Icon.TabBarItemIOS>
             </TabBarIOS>
         );
