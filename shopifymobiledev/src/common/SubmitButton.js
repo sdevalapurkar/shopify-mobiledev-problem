@@ -5,7 +5,7 @@ import {
     StyleSheet
 } from 'react-native';
 
-class GetStartedButton extends Component {
+class SubmitButton extends Component {
     render() {
         return (
             <TouchableOpacity
@@ -13,7 +13,7 @@ class GetStartedButton extends Component {
                 style={styles.button}
             >
                 <Text style={styles.text}>
-                    GET STARTED
+                    SUBMIT
                 </Text>
             </TouchableOpacity>
         );
@@ -43,4 +43,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default GetStartedButton;
+export default SubmitButton;

@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import {
-    Text,
-    View
-} from 'react-native';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import reducers from './reducers';
+import ReduxThunk from 'redux-thunk';
 import Router from './Router.js';
 
 class App extends Component {
     render() {
         return (
-            <Router />
+            <Provider store={createStore(reducers, {}, applyMiddleware(ReduxThunk))}>
+                <Router />
+            </Provider>
         );
     }
 }

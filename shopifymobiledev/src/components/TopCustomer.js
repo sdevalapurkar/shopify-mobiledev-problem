@@ -41,6 +41,10 @@ class TopCustomer extends Component {
                 <Text style={styles.titleStyle}>
                     TOP CUSTOMER
                 </Text>
+
+                <Text style={styles.nameStyle}>
+                    Hello
+                </Text>
             </View>
 
             </ImageBackground>
@@ -61,6 +65,12 @@ const styles = StyleSheet.create({
         paddingTop: 30,
         textAlign: 'center',
         color: '#003311'
+    },
+    nameStyle: {
+        fontSize: 22,
+        fontWeight: 'bold',
+        paddingTop: 30,
+        paddingLeft: 10
     }
 });
 

@@ -3,17 +3,42 @@ import {
     ImageBackground,
     StyleSheet,
     View,
-    Text
-} from 'react-native'
-import { Actions } from 'react-native-router-flux';
+    Text,
+    TextInput
+} from 'react-native';
+import { 
+    setFirstName,
+    setLastName,
+    setEmail,
+    searchForCustomer 
+} from '../actions';
+import { connect } from 'react-redux';
+import SubmitButton from '../common/SubmitButton.js';
+import FirstNameForm from '../common/FirstNameForm.js';
+import LastNameForm from '../common/LastNameForm.js';
+import EmailForm from '../common/EmailForm.js';
 
 class CustomerSales extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            selectedTab: 'customersales'
+            selectedTab: 'customersales',
+            orders: []
         }
+    }
+
+    componentWillMount() {
+        fetch('https://shopicruit.myshopify.com/admin/orders.json?page=1&access_token=c32313df0d0ef512ca64d5b336a0d7c6')
+        .then((response) => {
+            return response;
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((result) => {
+            this.setState({ orders: result.orders });
+        })
     }
 
     render() {
@@ -27,6 +52,53 @@ class CustomerSales extends Component {
                 <Text style={styles.titleStyle}>
                     CUSTOMER SALES
                 </Text>
+
+                <Text style={styles.instructions}>
+                    Search for a customer and figure out how much they are spending on your store! :)
+                </Text>
+
+                <FirstNameForm 
+                    onChangeText={(firstName) => {
+                        this.props.setFirstName(firstName);
+                    }}
+                    value={this.props.firstName}
+                />
+
+                <LastNameForm
+                    onChangeText={(lastName) => {
+                        this.props.setLastName(lastName);
+                    }}
+                    value={this.props.lastName}
+                />
+
+                <EmailForm
+                    onChangeText={(email) => {
+                        this.props.setEmail(email);
+                    }}
+                    value={this.props.email}
+                />
+
+                <View style={styles.buttonViewStyle}>
+                    <SubmitButton 
+                        onPress={() => {
+                            var res = this.state.orders;
+                            var custOrders = [];
+                           
+                            for(var x = 0; x < res.length; x++) {
+                                if(res[x].customer !== undefined) {
+                                    if(res[x].customer.first_name === this.props.firstName && res[x].customer.last_name === this.props.lastName) {
+                                        custOrders.push(res[x]);
+                                    }
+                                    else if(res[x].customer.email === this.props.email) {
+                                        custOrders.push(res[x]);
+                                    }
+                                }
+                            }
+
+                            this.props.searchForCustomer(custOrders);
+                        }}
+                    />
+                </View>
             </View>
 
             </ImageBackground>
@@ -47,7 +119,25 @@ const styles = StyleSheet.create({
         paddingTop: 30,
         textAlign: 'center',
         color: '#003311'
+    },
+    instructions: {
+        fontSize: 14,
+        paddingTop: 30,
+        paddingBottom: 15,
+        fontWeight: 'bold',
+        textAlign: 'center'
+    },
+    buttonViewStyle: {
+        paddingTop: 60
     }
 });
 
-export default CustomerSales;
+const mapStateToProps = state => {
+    return {
+        firstName: state.customersales.firstName,
+        lastName: state.customersales.lastName,
+        email: state.customersales.email
+    }
+};
+
+export default connect(mapStateToProps, { setFirstName, setLastName, setEmail, searchForCustomer })(CustomerSales);

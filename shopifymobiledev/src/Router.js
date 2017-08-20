@@ -6,6 +6,7 @@ import {
 } from 'react-native-router-flux';
 import WelcomeScreen from './components/WelcomeScreen.js';
 import TabView from './components/TabView.js';
+import CustomerOrderDetails from './components/CustomerOrderDetails.js';
 
 const RouterComponent = () => {
     return (
@@ -19,6 +20,11 @@ const RouterComponent = () => {
                 <Scene
                     key="tabview"
                     component={TabView}
+                    navTransparent={1}
+                />
+                <Scene
+                    key="custorderdetails"
+                    component={CustomerOrderDetails}
                     navTransparent={1}
                 />
             </Scene>
