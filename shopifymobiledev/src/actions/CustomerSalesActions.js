@@ -31,3 +31,9 @@ export const searchForCustomer = (custOrders) => {
         Actions.custorderdetails();
     }
 };
+
+export const clearNames = () => {
+    return {
+        type: 'clear_names'
+    };
+};

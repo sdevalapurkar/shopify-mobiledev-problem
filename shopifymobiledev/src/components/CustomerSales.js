@@ -4,7 +4,8 @@ import {
     StyleSheet,
     View,
     Text,
-    TextInput
+    TextInput,
+    Platform
 } from 'react-native';
 import { 
     setFirstName,
@@ -72,17 +73,6 @@ class CustomerSales extends Component {
                     value={this.props.lastName}
                 />
 
-                <Text style={styles.orStyle}>
-                    OR
-                </Text>
-
-                <EmailForm
-                    onChangeText={(email) => {
-                        this.props.setEmail(email);
-                    }}
-                    value={this.props.email}
-                />
-
                 <View style={styles.buttonViewStyle}>
                     <SubmitButton 
                         onPress={() => {
@@ -132,30 +122,38 @@ const styles = StyleSheet.create({
     titleStyle: {
         fontSize: 24,
         fontWeight: 'bold',
-        paddingTop: 30,
         textAlign: 'center',
-        color: '#003311'
+        color: '#003300',
+        ...Platform.select({
+            android: {
+                paddingTop: 60
+            }
+        }),
+        ...Platform.select({
+            ios: {
+                paddingTop: 30
+            }
+        })
     },
     instructions: {
         fontSize: 14,
-        paddingTop: 30,
-        paddingBottom: 15,
+        paddingTop: 10,
         fontWeight: 'bold',
         textAlign: 'center',
-        color: '#003311'
+        color: '#003300'
     },
     orStyle: {
         fontSize: 26,
         fontWeight: 'bold',
         textAlign: 'center',
-        paddingTop: 20,
+        paddingTop: 5,
         color: '#003311'
     },
     buttonViewStyle: {
         paddingTop: 40
     },
     error: {
-        paddingTop: 20,
+        paddingTop: 10,
         fontSize: 16,
         fontWeight: 'bold',
         textAlign: 'center',
@@ -166,9 +164,8 @@ const styles = StyleSheet.create({
 const mapStateToProps = state => {
     return {
         firstName: state.customersales.firstName,
-        lastName: state.customersales.lastName,
-        email: state.customersales.email
+        lastName: state.customersales.lastName
     }
 };
 
-export default connect(mapStateToProps, { setFirstName, setLastName, setEmail, searchForCustomer })(CustomerSales);
+export default connect(mapStateToProps, { setFirstName, setLastName, searchForCustomer })(CustomerSales);

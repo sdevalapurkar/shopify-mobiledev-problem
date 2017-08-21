@@ -3,7 +3,8 @@ import {
     View,
     Text,
     ImageBackground,
-    StyleSheet
+    StyleSheet,
+    Platform
 } from 'react-native';
 import { connect } from 'react-redux';
 
@@ -97,10 +98,17 @@ const styles = StyleSheet.create({
     titleStyle: {
         fontSize: 24,
         fontWeight: 'bold',
-        paddingTop: 30,
         paddingBottom: 20,
         textAlign: 'center',
-        color: '#003311'
+        color: '#003311',
+        ...Platform.select({
+            ios: {
+                paddingTop: 30
+            },
+            android: {
+                paddingTop: 10
+            }
+        })
     },
     spentTextStyle: {
         fontSize: 18,

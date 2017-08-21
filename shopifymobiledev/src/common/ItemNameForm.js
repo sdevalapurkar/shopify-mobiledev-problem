@@ -16,9 +16,9 @@ class ItemNameForm extends Component {
                 
                 <View style={styles.cardStyle}>
                     <TextInput
-                        style={{marginLeft: 5, marginRight: 5}}
+                        style={{marginLeft: 5, marginRight: 5, color: '#f2f2f2'}}
                         placeholder="Aerodynamic Wooden Table"
-                        placeholderTextColor="#003311"
+                        placeholderTextColor="#f2f2f2"
                         underlineColorAndroid='rgba(0,0,0,0)'
                         onChangeText={this.props.onChangeText}
                         value={this.props.value}
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         marginRight: 10,
         marginTop: 10,
-        height: 40
+        height: 50
     }
 });
 

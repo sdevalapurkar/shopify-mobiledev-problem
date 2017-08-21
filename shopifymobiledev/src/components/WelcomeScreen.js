@@ -4,7 +4,8 @@ import {
     ImageBackground,
     Image,
     Text,
-    StyleSheet
+    StyleSheet,
+    Platform
 } from 'react-native';
 import GetStartedButton from '../common/GetStartedButton.js';
 import { Actions } from 'react-native-router-flux';
@@ -34,7 +35,13 @@ class WelcomeScreen extends Component {
 
                 <GetStartedButton
                     onPress={() => {
-                        Actions.tabview();
+                        if(Platform.OS === 'ios') {
+                            Actions.tabview();
+                        }
+                        else if(Platform.OS === 'android') {
+                            Actions.scrollabletabview();
+                        }
+                        
                     }}
                 />
 

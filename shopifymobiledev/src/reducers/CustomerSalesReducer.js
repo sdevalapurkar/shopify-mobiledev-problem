@@ -1,7 +1,6 @@
 const INITIAL_STATE = {
     firstName: '',
     lastName: '',
-    email: '',
     custOrders: []
 };
 
@@ -15,8 +14,8 @@ export default (state = INITIAL_STATE, action) => {
     else if(action.type === 'set_last_name') {
         return { ...state, lastName: action.payload };
     }
-    else if(action.type === 'set_email') {
-        return { ...state, email: action.payload };
+    else if(action.type === 'clear_names') {
+        return { ...state, firstName: '', lastName: '' };
     }
     else {
         return state;

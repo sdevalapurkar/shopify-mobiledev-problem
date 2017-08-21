@@ -16,9 +16,9 @@ class FirstNameForm extends Component {
                 
                 <View style={styles.cardStyle}>
                     <TextInput
-                        style={{marginLeft: 5, marginRight: 5}}
+                        style={{marginLeft: 5, marginRight: 5, color: '#f2f2f2'}}
                         placeholder="John"
-                        placeholderTextColor="#003311"
+                        placeholderTextColor="#f2f2f2"
                         underlineColorAndroid='rgba(0,0,0,0)'
                         onChangeText={this.props.onChangeText}
                         value={this.props.value}
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         paddingTop: 15,
         paddingLeft: 10,
-        color: '#003311'
+        color: '#003300'
     },
     cardStyle: {
         borderWidth: 3,
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         marginRight: 10,
         marginTop: 10,
-        height: 40
+        height: 50
     }
 });
 

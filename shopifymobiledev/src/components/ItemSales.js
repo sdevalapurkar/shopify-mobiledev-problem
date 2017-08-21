@@ -3,9 +3,10 @@ import {
     ImageBackground,
     StyleSheet,
     View,
-    Text
+    Text,
+    Platform
 } from 'react-native';
-import { searchForItem } from '../actions';
+import { searchForItem, clearItem } from '../actions';
 import { connect } from 'react-redux';
 import ItemNameForm from '../common/ItemNameForm.js';
 import SubmitButton from '../common/SubmitButton.js';
@@ -67,12 +68,13 @@ class ItemSales extends Component {
                             for(var x = 0; x < res.length; x++) {
                                 for(var y = 0; y < res[x].line_items.length; y++) {
                                     if(res[x].line_items[y].title === this.state.itemName) {
-                                        correctItems.push(res[x].line_items[y].title);
+                                        correctItems.push(res[x].line_items[y]);
                                     }
                                 }
                             }
 
                             if(correctItems.length !== 0) {
+                                this.setState({ itemName: '' });
                                 this.props.searchForItem(correctItems);
                             }
                             else {
@@ -104,14 +106,22 @@ const styles = StyleSheet.create({
     titleStyle: {
         fontSize: 24,
         fontWeight: 'bold',
-        paddingTop: 30,
         textAlign: 'center',
-        color: '#003311'
+        color: '#003311',
+        ...Platform.select({
+            android: {
+                paddingTop: 60
+            }
+        }),
+        ...Platform.select({
+            ios: {
+                paddingTop: 30
+            }
+        })
     },
     instructions: {
         fontSize: 14,
-        paddingTop: 30,
-        paddingBottom: 15,
+        paddingTop: 10,
         fontWeight: 'bold',
         textAlign: 'center',
         color: '#003311'
@@ -128,4 +138,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default connect(null, { searchForItem })(ItemSales);
+export default connect(null, { searchForItem, clearItem })(ItemSales);
