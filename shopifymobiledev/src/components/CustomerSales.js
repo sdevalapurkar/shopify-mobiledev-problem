@@ -91,6 +91,7 @@ class CustomerSales extends Component {
                             }
 
                             if(custOrders.length !== 0) {
+                                this.setState({ userExists: true });
                                 this.props.searchForCustomer(custOrders);
                             }
                             else {

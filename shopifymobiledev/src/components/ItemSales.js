@@ -74,7 +74,7 @@ class ItemSales extends Component {
                             }
 
                             if(correctItems.length !== 0) {
-                                this.setState({ itemName: '' });
+                                this.setState({ itemName: '', itemExists: true });
                                 this.props.searchForItem(correctItems);
                             }
                             else {
