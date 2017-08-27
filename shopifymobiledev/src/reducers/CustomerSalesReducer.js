@@ -1,6 +1,6 @@
 const INITIAL_STATE = {
-    firstName: '',
-    lastName: '',
+    firstName: 'Napoleon',
+    lastName: 'Batz',
     custOrders: []
 };
 
@@ -15,7 +15,7 @@ export default (state = INITIAL_STATE, action) => {
         return { ...state, lastName: action.payload };
     }
     else if(action.type === 'clear_names') {
-        return { ...state, firstName: '', lastName: '' };
+        return { ...state };
     }
     else {
         return state;

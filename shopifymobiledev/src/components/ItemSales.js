@@ -18,7 +18,7 @@ class ItemSales extends Component {
 
         this.state = {
             orders: [],
-            itemName: '',
+            itemName: 'Awesome Bronze Bag',
             itemExists: true
         }
     }
@@ -74,7 +74,7 @@ class ItemSales extends Component {
                             }
 
                             if(correctItems.length !== 0) {
-                                this.setState({ itemName: '', itemExists: true });
+                                this.setState({ itemExists: true });
                                 this.props.searchForItem(correctItems);
                             }
                             else {
