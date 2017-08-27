@@ -11,25 +11,25 @@ Retrieves data from a Shopify API for orders and calculates values of amount spe
 # iOS
 
 ## Splash Screen
-![2](https://user-images.githubusercontent.com/28017034/29505498-5d180014-860c-11e7-9a4a-abffcea37025.png)
+<img src="https://user-images.githubusercontent.com/28017034/29505498-5d180014-860c-11e7-9a4a-abffcea37025.png" width="374" />
 
 ## Search by Customer
-![4](https://user-images.githubusercontent.com/28017034/29505550-a2cca7fe-860c-11e7-9d36-af8cb445c215.png)
+<img src="https://user-images.githubusercontent.com/28017034/29505550-a2cca7fe-860c-11e7-9d36-af8cb445c215.png" width="374" />
 
 ## Figure out how many items they purchased and total amount spent
-![5](https://user-images.githubusercontent.com/28017034/29505590-d0ffe69a-860c-11e7-8717-d2bbbb5c9152.png)
+<img src="https://user-images.githubusercontent.com/28017034/29505590-d0ffe69a-860c-11e7-8717-d2bbbb5c9152.png" width="374" />
 
 ## Search by Item
-![6](https://user-images.githubusercontent.com/28017034/29505615-f3fc0a34-860c-11e7-89a2-ce724fbe5128.png)
+<img src="https://user-images.githubusercontent.com/28017034/29505615-f3fc0a34-860c-11e7-89a2-ce724fbe5128.png" width="374" />
 
 ## Figure out how many of that item have been sold
-![7](https://user-images.githubusercontent.com/28017034/29505628-08b1cf4a-860d-11e7-83b3-24983fd0c457.png)
+<img src="https://user-images.githubusercontent.com/28017034/29505628-08b1cf4a-860d-11e7-83b3-24983fd0c457.png" width="374" />
 
 # Android
 
 Similar UI, except some components such as the Tab Bar (which is specific to iOS) is replaced with a sideways scrollable Android TabBar.
 
 ## With Android Scrollable Tab Bar
-![3](https://user-images.githubusercontent.com/28017034/29505683-4b050b32-860d-11e7-8915-2d1038c805e6.jpg)
+<img src="https://user-images.githubusercontent.com/28017034/29505683-4b050b32-860d-11e7-8915-2d1038c805e6.jpg" width="374" />
 
-![1](https://user-images.githubusercontent.com/28017034/29505696-55c038ee-860d-11e7-9749-4b90beb6c455.jpg)
+<img src="https://user-images.githubusercontent.com/28017034/29505696-55c038ee-860d-11e7-9749-4b90beb6c455.jpg" width="374" />
