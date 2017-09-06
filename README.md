@@ -23,7 +23,7 @@ Retrieves data from a Shopify API for orders and calculates values of amount spe
 <img src="https://user-images.githubusercontent.com/28017034/29505615-f3fc0a34-860c-11e7-89a2-ce724fbe5128.png" width="374" />
 
 ## Figure out how many of that item have been sold
-<img src="https://user-images.githubusercontent.com/28017034/29505628-08b1cf4a-860d-11e7-83b3-24983fd0c457.png" width="374" />
+<img width="373" alt="itemsales" src="https://user-images.githubusercontent.com/28017034/30139424-ae47ab60-9322-11e7-9111-2b357a6c4232.png">
 
 # Android
 
