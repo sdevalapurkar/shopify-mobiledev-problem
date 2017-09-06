@@ -10,7 +10,10 @@ import { connect } from 'react-redux';
 
 class ItemDetails extends Component {
     render() {
-        console.log(this.props.correctItems);
+        let quantity = 0;
+        for(var x = 0; x < this.props.correctItems.length; x++) {
+            quantity += this.props.correctItems[x].quantity;
+        }
 
         return (
             <ImageBackground
@@ -33,7 +36,7 @@ class ItemDetails extends Component {
             </Text>
 
             <Text style={styles.spentStyle}>
-                {this.props.correctItems.length}
+                {quantity}
             </Text>
 
             </ImageBackground>
