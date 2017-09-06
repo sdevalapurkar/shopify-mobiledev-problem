@@ -32,7 +32,7 @@ class ItemDetails extends Component {
             </View>
 
             <Text style={styles.spentTextStyle}>
-                Total Items Sold:
+                Total Items Sold (Quantity):
             </Text>
 
             <Text style={styles.spentStyle}>
